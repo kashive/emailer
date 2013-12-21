@@ -1,0 +1,19 @@
+<h2>Send email</h2>
+<%= form_for(@email, url: {action: "publish"}) do |f| %>
+	<ul>
+	<% @clubLeaders.each do |k, v|%>		
+		<li>
+			<%=check_box_tag "#{k.gsub(/\s+/, "_")}", 'yes', false, :class => "Category"%><%=k%>
+			<ul>
+				<%@clubLeaders[k].each do |i,j|%>
+					<li>
+						<%=check_box_tag "#{i.gsub(/\s+/, "_")}", 'yes', false, :class => "#{k.gsub(/\s+/, "_")+ " " + i.gsub(/\s+/, "_")}"%><%=i%>
+					</li>
+				<%end%>
+			</ul>
+		</li>
+	<%end%>
+	</ul>
+	<div><%= f.text_area :message, :placeholder=>"Your Message" %></div>
+	<div><%= f.submit "Send email", :class=>'btn btn-info'%></div>
+<% end %>

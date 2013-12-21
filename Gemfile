@@ -27,9 +27,20 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'gon'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+	gem 'sqlite3' 
+	gem 'pry' #command line interactive debugger as well as an interative online shell
+	gem 'better_errors' #makes the exception page pretty and adds interactive debugging tool
+	gem 'binding_of_caller'
+	gem 'meta_request'
+	gem 'debugger'
 end
 
 # Use ActiveModel has_secure_password
