@@ -14,6 +14,10 @@
 		</li>
 	<%end%>
 	</ul>
+	Please use #first_name if you want to include the first name of the club leader<br>
+	use #last_name if you want to include the last name of the club leader<br>
+	use #club_name if you want to include the club name<br>
+	use #category_name if you want to include the club category<br><br>
 	<div><%= f.text_area :message, :placeholder=>"Your Message" %></div>
-	<div><%= f.submit "Send email", :class=>'btn btn-info'%></div>
+	<div><%= f.submit "Send messages", :class=>'btn btn-info'%></div>
 <% end %>
